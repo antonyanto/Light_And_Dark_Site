@@ -1,0 +1,247 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-bg-color: #2F2519;
+  --dark-text-color: #fff;
+  --light-bg-color: #f9f9f9;
+  --light-text-color: #000;
+  --light-icon-color: #000;
+  --dark-icon-color: #fff;
+}
+
+div.preloader {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+div.preloader > img {
+  height: 10vh;
+  width: auto;
+}
+
+.light_theme {
+  background-color: var(--light-bg-color);
+  color: var(--light-text-color);
+  transition: all 1s;
+}
+
+.dark_theme {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-text-color);
+  transition: all 1s;
+}
+
+.light_icon_color {
+  color: var(--light-icon-color);
+}
+
+.dark_icon_color {
+  color: var(--dark-icon-color);
+}
+
+#sub_container {
+  width: 85%;
+  margin: 0px auto;
+}
+
+#sub_container.hide_when_nav {
+  display: none;
+}
+
+#main_container {
+  height: auto;
+  width: 100%;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-top: 25px;
+}
+
+nav > ul {
+  align-self: flex-end;
+}
+
+nav > a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 2rem;
+  color: #FF0066;
+  font-family: fantasy;
+  transition: color 0.5s;
+}
+
+nav > a:hover,
+nav > ul > li a:hover,
+#sub_container > i:nth-of-type(1):hover {
+  color: #FF0066;
+}
+
+nav > ul > li {
+  display: inline-block;
+  margin: 0px 20px;
+}
+
+nav > ul > li a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.1rem;
+  font-family: monospace;
+  font-weight: bold;
+  transition: color 0.5s;
+}
+
+#sub_container > i:nth-of-type(1){
+  font-size: 1.45rem;
+  position: absolute;
+  top: 5.5%;
+  right: 4%;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+#sub_container > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap-reverse;
+  margin: 100px 0px 0px;
+  width: 100%;
+  min-height: 400px;
+}
+
+#sub_container > div > div:first-of-type > p:first-of-type {
+  font-size: 3rem;
+  font-family: "Work Sans", sans-serif;
+  margin-bottom: 16px;
+}
+
+#sub_container > div > div:first-of-type > p:first-of-type > span {
+  color: #FF0066;
+}
+
+#sub_container > div > div:first-of-type > p:nth-of-type(2) {
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+#sub_container > div > div:nth-of-type(2) {
+  flex-basis: 220px;
+}
+
+#sub_container > div > div:nth-of-type(2) > img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+#sub_container > div > div:nth-of-type(1) {
+  flex-basis: 390px;
+}
+
+#sub_container > div > div:first-of-type > a {
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  color: #fff;
+  background-color: #FF0066;
+  transition: all 0.5s;
+}
+
+#sub_container > div > div:first-of-type > a:hover {
+  outline: 1px solid #000;
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+#sub_container > div > div > div {
+  margin-top: 50px;
+}
+
+#sub_container > div > div > div i {
+  font-size: 25px;
+  margin: 0px 40px 0px 0px;
+  transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#sub_container > div > div > div i:hover {
+  transform: translateY(5px);
+}
+
+.lines {
+  width: 100%;
+  height: 4px;
+}
+
+#toggle_button {
+  width: 25px;
+  height: 20px;
+  position: absolute;
+  top: 5.5%;
+  left: 5%;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+#toggle_button.active_nav {
+  top: 2.4rem;
+  left: 2.2rem;
+}
+
+div#nav_links {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+#nav_links {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+#nav_links.active {
+  display: flex;
+}
+
+#nav_links > a {
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 20px;
+  color: inherit;
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 100px) and (max-width: 718px) {
+  #toggle_button {
+    display: flex;
+  }
+
+  nav > ul {
+    display: none;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+  nav > a{
+    align-self: center;
+  }
+}
